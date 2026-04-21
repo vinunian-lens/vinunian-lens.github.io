@@ -24,6 +24,17 @@
     },
     {
       "order": 3,
+      "location": "j8",
+      "yaw": 360,
+      "pitch": -25,
+      "title": "The Year COVID Came to the Dorm",
+      "body": "First year, locked down in the dorm. We made the best of it — hallway badminton, midnight corridor conversations, and a lot of instant noodles. Stranger times, but somehow the closest we ever got as a floor.",
+      "image": null,
+      "video": "assets/year1_covid_test.mp4",
+      "date": "2020-09-15"
+    },
+    {
+      "order": 4,
       "location": "o3",
       "yaw": 90,
       "pitch": -3,
@@ -33,7 +44,7 @@
       "date": "2024-09-10"
     },
     {
-      "order": 4,
+      "order": 5,
       "location": "o3",
       "yaw": 210,
       "pitch": -2,
@@ -43,7 +54,7 @@
       "date": "2024-10-03"
     },
     {
-      "order": 5,
+      "order": 6,
       "location": "a21",
       "yaw": 180,
       "pitch": 10,
@@ -53,7 +64,7 @@
       "date": "2024-11-08"
     },
     {
-      "order": 6,
+      "order": 7,
       "location": "a21",
       "yaw": 280,
       "pitch": 0,
@@ -63,7 +74,7 @@
       "date": "2024-11-14"
     },
     {
-      "order": 7,
+      "order": 8,
       "location": "k3",
       "yaw": 45,
       "pitch": -15,
@@ -73,7 +84,7 @@
       "date": "2024-10-15"
     },
     {
-      "order": 8,
+      "order": 9,
       "location": "o5",
       "yaw": 270,
       "pitch": -5,
@@ -83,7 +94,7 @@
       "date": "2024-10-22"
     },
     {
-      "order": 9,
+      "order": 10,
       "location": "o5",
       "yaw": 20,
       "pitch": -3,
@@ -92,16 +103,5 @@
       "image": null,
       "date": "2024-10-28"
     },
-    {
-      "order": 10,
-      "location": "j8",
-      "yaw": 360,
-      "pitch": -25,
-      "title": "The Year COVID Came to the Dorm",
-      "body": "First year, locked down in the dorm. We made the best of it — hallway badminton, midnight corridor conversations, and a lot of instant noodles. Stranger times, but somehow the closest we ever got as a floor.",
-      "image": null,
-      "video": "assets/year1_covid_test.mp4",
-      "date": "2020-09-15"
-    }
   ]
 }
