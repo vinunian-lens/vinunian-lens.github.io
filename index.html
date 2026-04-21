@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My VinUni Journey — A Story</title>
+  <link rel="stylesheet" href="styles.css?v=2.0.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="cover-active">
+<div id="app">
+
+  <!-- ── Cover / Intro ── -->
+  <div id="cover-screen">
+    <div class="cover-content">
+      <p class="cover-eyebrow">A Personal Story</p>
+      <h1 class="cover-title">My VinUni Journey</h1>
+      <p class="cover-subtitle">Nine moments across the VinUni campus &mdash; stepped through one at a time.</p>
+      <button id="begin-btn" class="cover-btn">Begin the Story &rarr;</button>
+      <p class="cover-hint">Use &larr; &rarr; or the story bar to navigate</p>
+    </div>
+  </div>
+
+  <!-- ── Panorama tour ── -->
+  <div id="tour-container">
+    <div id="panorama"></div>
+    <div class="vignette vignette-top"></div>
+    <div class="vignette vignette-bottom"></div>
+
+    <!-- Pin overlay -->
+    <div id="overlay">
+      <div id="annotations-layer"></div>
+    </div>
+
+    <!-- Progress bar -->
+    <div id="story-progress" aria-hidden="true">
+      <div id="story-progress-fill"></div>
+    </div>
+
+    <!-- Top Bar -->
+    <header id="top-bar">
+      <div id="logo">
+        <span class="logo-mark">VU</span>
+        <span class="logo-text">A Journey of a VinUnian</span>
+      </div>
+      <div id="location-pill">
+        <span id="current-scene-name">Main Gate</span>
+        <span class="pill-sep">|</span>
+        <span id="yaw-display">0°</span>
+      </div>
+      <button id="toggle-sidebar-btn" class="icon-btn" title="Table of contents (S)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6"  x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="15" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Persistent Chapter Panel -->
+    <article id="chapter-panel">
+      <div class="chapter-panel-inner">
+        <h2 class="chapter-title" id="ch-title">&mdash;</h2>
+        <div class="chapter-meta">
+          <span id="ch-location">&mdash;</span>
+          <span class="meta-dot">&bull;</span>
+          <span id="ch-date">&mdash;</span>
+        </div>
+        <img id="ch-image" class="chapter-image" alt="" style="display:none">
+        <div class="chapter-body" id="ch-body">&mdash;</div>
+      </div>
+    </article>
+
+    <!-- Story controls -->
+    <div id="story-controls">
+      <button id="prev-btn" class="story-arrow" title="Previous moment (&larr;)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+      <span id="chapter-counter"><span id="ch-counter-num">1</span> / <span id="ch-counter-total">9</span></span>
+      <div id="scrubber" class="scrubber"></div>
+      <button id="next-btn" class="story-arrow" title="Next moment (&rarr;)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ── Sidebar / Table of Contents ── -->
+  <aside id="sidebar" class="sidebar-closed">
+    <div id="sidebar-header">
+      <h2>Table of Contents</h2>
+      <button id="close-sidebar-btn" class="icon-btn" title="Close (Esc)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6"  x2="6"  y2="18"/>
+          <line x1="6"  y1="6"  x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <nav id="sidebar-tabs">
+      <button class="tab-btn active" data-tab="story">Story</button>
+      <button class="tab-btn"        data-tab="locations">Locations</button>
+      <button class="tab-btn"        data-tab="music">Music</button>
+    </nav>
+
+    <div id="tab-story" class="tab-content active">
+      <div id="toc-list"></div>
+    </div>
+
+    <div id="tab-locations" class="tab-content">
+      <p class="section-label">Campus Stops</p>
+      <div id="routes-list"></div>
+    </div>
+
+    <div id="tab-music" class="tab-content">
+      <p class="section-label">Soundtrack</p>
+      <div class="empty-state">
+        <div class="empty-icon">&#9835;</div>
+        <div class="empty-text">A playlist for each moment is on its way.</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ── Outro ── -->
+  <div id="outro-screen" class="outro-hidden">
+    <div class="outro-content">
+      <p class="cover-eyebrow">Fin.</p>
+      <h2 class="outro-title">The end, for now.</h2>
+      <p class="outro-subtitle">Thanks for walking through my story. There is always another moment being written.</p>
+      <div class="outro-actions">
+        <button id="restart-btn" class="cover-btn">Start over &#8635;</button>
+        <button id="browse-btn" class="cover-btn ghost">Browse moments</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+<script src="app.js?v=2.0.0"></script>
+</body>
+</html>

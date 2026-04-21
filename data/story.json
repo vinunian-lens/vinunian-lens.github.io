@@ -1,0 +1,96 @@
+{
+  "_comment_chapters": "Each chapter is a moment in the story. Order matters — the story follows this sequence, not the location order. Images can be remote URLs or local paths like 'assets/photo.jpg'. Set image to null if there is none.",
+
+  "chapters": [
+    {
+      "order": 1,
+      "location": "o1",
+      "yaw": 0,
+      "pitch": 0,
+      "title": "First Day on Campus",
+      "body": "Arrived at VinUni for orientation. The gate looked even more impressive in person — I took a hundred photos. Highly recommend coming at sunset, when the light hits the architecture perfectly and the shadows stretch across the lawn.",
+      "image": "https://picsum.photos/seed/vinuni1/800/500",
+      "date": "2024-09-02"
+    },
+    {
+      "order": 2,
+      "location": "o1",
+      "yaw": 135,
+      "pitch": 0,
+      "title": "Campus Map Confusion",
+      "body": "It took me three days to learn which building was which. The campus is a beautiful maze — elegant on a map, disorienting in the rain.",
+      "image": null,
+      "date": "2024-09-04"
+    },
+    {
+      "order": 3,
+      "location": "o3",
+      "yaw": 90,
+      "pitch": 0,
+      "title": "The Tuesday Study Crew",
+      "body": "The CS group claimed this corner every Tuesday at 2pm. Unwritten rule — no one ever took our spot. It became less about studying and more about the ritual of showing up.",
+      "image": "https://picsum.photos/seed/vinuni3/800/500",
+      "date": "2024-09-10"
+    },
+    {
+      "order": 4,
+      "location": "o3",
+      "yaw": 210,
+      "pitch": 0,
+      "title": "Caught in the Rain",
+      "body": "A tropical downpour out of nowhere. I sheltered under the overhang for forty minutes with half the campus, creating an impromptu networking session while waiting for the skies to clear.",
+      "image": null,
+      "date": "2024-10-03"
+    },
+    {
+      "order": 5,
+      "location": "a21",
+      "yaw": 180,
+      "pitch": 0,
+      "title": "My Favourite Window Seat",
+      "body": "Second floor, east corner. Perfect light, the quiet hum of AC, strong WiFi. I started measuring productivity by how often I could claim that seat.",
+      "image": "https://picsum.photos/seed/vinuni5/800/500",
+      "date": "2024-11-08"
+    },
+    {
+      "order": 6,
+      "location": "a21",
+      "yaw": 280,
+      "pitch": 0,
+      "title": "The Algorithms All-Nighter",
+      "body": "Library closes at 11pm — had to pack up and move to the lobby. Survived the midterm regardless. The kind of night you don't remember fondly until a year later.",
+      "image": null,
+      "date": "2024-11-14"
+    },
+    {
+      "order": 7,
+      "location": "k3",
+      "yaw": 45,
+      "pitch": 0,
+      "title": "Six AM, Empty Lanes",
+      "body": "Cold water, empty lanes, just the sound of splashing. Best mental reset before a long lecture day. Nobody else thought it was worth it — that was the point.",
+      "image": "https://picsum.photos/seed/vinuni7/800/500",
+      "date": "2024-10-15"
+    },
+    {
+      "order": 8,
+      "location": "o5",
+      "yaw": 270,
+      "pitch": 0,
+      "title": "The Inter-Faculty Final",
+      "body": "Engineering beat Business 3–2. I scored the winner with a left-foot curler in the 89th minute and sent the stadium into absolute pandemonium. The highlight of my athletic life on this campus.",
+      "image": "https://picsum.photos/seed/vinuni8/800/500",
+      "date": "2024-10-22"
+    },
+    {
+      "order": 9,
+      "location": "o5",
+      "yaw": 20,
+      "pitch": 0,
+      "title": "A Note to Future Me",
+      "body": "Thursday drills at 5pm sharp. Fix the first touch. Keep the team close. Keep showing up — the small Thursdays are what made the big October nights possible.",
+      "image": null,
+      "date": "2024-10-28"
+    }
+  ]
+}
