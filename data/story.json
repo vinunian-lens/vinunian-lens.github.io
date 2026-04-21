@@ -27,14 +27,24 @@
       "location": "j8",
       "yaw": 360,
       "pitch": -25,
-      "title": "The Year COVID Came to the Dorm",
+      "title": "Year 1: The Year COVID Came to the Dorm",
       "body": "First year, locked down in the dorm. We made the best of it — hallway badminton, midnight corridor conversations, and a lot of instant noodles. Stranger times, but somehow the closest we ever got as a floor.",
       "image": null,
       "video": "assets/year1_covid_test.mp4",
-      "date": "2020-09-15"
+      "date": "2022-02-21"
     },
     {
       "order": 4,
+      "location": "c6",
+      "yaw": 33,
+      "pitch": -27,
+      "title": "Year 2: Feeling Lost",
+      "body": "Although I still found my major interesting, I began losing motivation and questioning why I was studying and what my future pathway might be.",
+      "image": "assets/year2_feeling_lost.jpeg",
+      "date": "2022-10-10"
+    },
+    {
+      "order": 5,
       "location": "o3",
       "yaw": 90,
       "pitch": -3,
@@ -44,7 +54,7 @@
       "date": "2024-09-10"
     },
     {
-      "order": 5,
+      "order": 6,
       "location": "o3",
       "yaw": 210,
       "pitch": -2,
@@ -54,7 +64,7 @@
       "date": "2024-10-03"
     },
     {
-      "order": 6,
+      "order": 7,
       "location": "a21",
       "yaw": 180,
       "pitch": 10,
@@ -64,7 +74,7 @@
       "date": "2024-11-08"
     },
     {
-      "order": 7,
+      "order": 8,
       "location": "a21",
       "yaw": 280,
       "pitch": 0,
@@ -74,7 +84,7 @@
       "date": "2024-11-14"
     },
     {
-      "order": 8,
+      "order": 9,
       "location": "k3",
       "yaw": 45,
       "pitch": -15,
@@ -84,7 +94,7 @@
       "date": "2024-10-15"
     },
     {
-      "order": 9,
+      "order": 10,
       "location": "o5",
       "yaw": 270,
       "pitch": -5,
@@ -94,7 +104,7 @@
       "date": "2024-10-22"
     },
     {
-      "order": 10,
+      "order": 11,
       "location": "o5",
       "yaw": 20,
       "pitch": -3,
