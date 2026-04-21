@@ -6,21 +6,21 @@
       "order": 1,
       "location": "o1",
       "yaw": 0,
-      "pitch": -5,
-      "title": "First Day on Campus",
-      "body": "Arrived at VinUni for orientation. The gate looked even more impressive in person — I took a hundred photos. Highly recommend coming at sunset, when the light hits the architecture perfectly and the shadows stretch across the lawn.",
-      "image": "https://picsum.photos/seed/vinuni1/800/500",
-      "date": "2024-09-02"
+      "pitch": 0,
+      "title": "Year 1: Online study via Zoom",
+      "body": "My first year at VinUni began entirely online through Zoom. Like many Cohort 2 students, I spent months seeing classmates only as small faces on a screen. I attended classes every day, yet still felt disconnected and unsure where I belonged.",
+      "image": null,
+      "date": "2021-09-09"
     },
     {
       "order": 2,
-      "location": "o1",
-      "yaw": 135,
-      "pitch": -8,
-      "title": "Campus Map Confusion",
-      "body": "It took me three days to learn which building was which. The campus is a beautiful maze — elegant on a map, disorienting in the rain.",
-      "image": null,
-      "date": "2024-09-04"
+      "location": "j8",
+      "yaw": 62,
+      "pitch": -6,
+      "title": "Year 1: Meeting new friends",
+      "body": "Everything changed when we finally moved into the on-campus dormitory in the second semester. During quarantine, we spent most of our time together inside the dorm area, and those quiet days unexpectedly brought us closer. I became part of a friend group called “lâu đài tình ái” [a loving castel], and we filled our evenings with movies, late-night karaoke, and long conversations. Even though I had little academic motivation at the time, these friendships became my first anchor at VinUni.",
+      "image": "assets/year1_an_uong.jpeg",
+      "date": "2022-01-15"
     },
     {
       "order": 3,
@@ -95,8 +95,8 @@
     {
       "order": 10,
       "location": "j8",
-      "yaw": 90,
-      "pitch": -5,
+      "yaw": 360,
+      "pitch": -25,
       "title": "The Year COVID Came to the Dorm",
       "body": "First year, locked down in the dorm. We made the best of it — hallway badminton, midnight corridor conversations, and a lot of instant noodles. Stranger times, but somehow the closest we ever got as a floor.",
       "image": null,
