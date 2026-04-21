@@ -152,7 +152,7 @@ async function initPannellum(sceneId) {
         state.yaw     = newYaw;
         state.pitch   = newPitch;
         lastPinRender = now;
-        $("yaw-display").textContent = `${Math.round(newYaw)}°`;
+        $("yaw-display").textContent = `${Math.round(newYaw)}° / ${Math.round(newPitch)}°`;
         if (!state.browseMode) renderPins();
       }
     }
@@ -276,8 +276,8 @@ function renderPins() {
   // Pre-compute camera rotation
   const cYaw   = state.yaw   * Math.PI / 180;
   const cPitch = state.pitch * Math.PI / 180;
-  const cosY = Math.cos(-cYaw),   sinY = Math.sin(-cYaw);
-  const cosP = Math.cos(-cPitch), sinP = Math.sin(-cPitch);
+  const cosY = Math.cos(-cYaw),  sinY = Math.sin(-cYaw);
+  const cosP = Math.cos(cPitch), sinP = Math.sin(cPitch);
 
   STORY_CHAPTERS.forEach((m, idx) => {
     if (m.location !== sceneId) return;
