@@ -23,6 +23,7 @@ const state = {
   // hides and we show location info instead.
   browseMode: false,
   browseLocation: null,
+  noteVisible: true,
 };
 
 let viewer = null;
@@ -215,6 +216,10 @@ function hideOutro() {
   state.outroVisible = false;
   $("outro-screen").classList.add("outro-hidden");
 }
+function toggleNote(force) {
+  state.noteVisible = force !== undefined ? force : !state.noteVisible;
+  $("chapter-panel").classList.toggle("note-hidden", !state.noteVisible);
+}
 
 // ── Renderers ─────────────────────────────────────────────────
 function renderChapterPanel() {
@@ -229,6 +234,7 @@ function renderChapterPanel() {
   else          { img.style.display  = "none"; img.removeAttribute("src"); }
 
   const panel = $("chapter-panel");
+  panel.classList.toggle("note-hidden", !state.noteVisible);
   panel.classList.remove("chapter-pulse");
   void panel.offsetWidth;
   panel.classList.add("chapter-pulse");
@@ -324,7 +330,15 @@ function renderPins() {
     pin.style.cssText = `left:${sx.toFixed(1)}px;top:${sy.toFixed(1)}px;opacity:${op.toFixed(2)}`;
     pin.title = `Moment ${m.order} — ${m.title}`;
     pin.innerHTML = `<div class="pin-icon">${locationPinSVG}</div>`;
-    pin.addEventListener("click", e => { e.stopPropagation(); goToChapter(idx); });
+    pin.addEventListener("click", e => {
+      e.stopPropagation();
+      if (idx === state.chapterIndex) {
+        toggleNote();
+      } else {
+        state.noteVisible = true;
+        goToChapter(idx);
+      }
+    });
     layer.appendChild(pin);
   });
 }

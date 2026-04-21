@@ -146,48 +146,92 @@ body {
 .icon-btn:hover { background: rgba(40, 30, 22, 0.95); transform: translateY(-1px); }
 .icon-btn svg { width: 20px; height: 20px; }
 
-/* ── Persistent Chapter Panel ── */
+/* ── Sticky Note Panel ── */
 #chapter-panel {
-  position: absolute; left: 28px; bottom: 124px;
+  position: absolute; left: 36px; bottom: 128px;
   z-index: 90;
-  width: 420px; max-width: calc(100vw - 56px);
-  background: var(--paper);
-  border-radius: 3px;
-  border-top: 4px solid var(--accent);
-  box-shadow: var(--shadow);
-  overflow: hidden;
+  width: 340px; max-width: calc(100vw - 72px);
+  /* Warm yellow sticky paper with subtle gradient + paper texture */
+  background:
+    linear-gradient(135deg, #fff4a3 0%, #ffeb82 50%, #ffe066 100%);
+  color: #2a2418;
+  border: none;
+  border-radius: 2px 18px 4px 12px;
+  /* Curled-corner shadow */
+  box-shadow:
+    2px 4px 0 rgba(0, 0, 0, 0.04),
+    6px 10px 18px rgba(40, 30, 15, 0.28),
+    inset 0 -24px 40px rgba(180, 140, 40, 0.08);
+  transform: rotate(-2.2deg);
+  transform-origin: top left;
+  transition: transform 0.35s var(--ease), opacity 0.3s var(--ease);
+}
+#chapter-panel::before {
+  /* Tape strip at top */
+  content: "";
+  position: absolute;
+  top: -10px; left: 40px;
+  width: 86px; height: 22px;
+  background: rgba(200, 220, 230, 0.55);
+  border: 1px solid rgba(120, 140, 150, 0.15);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  transform: rotate(-4deg);
+}
+#chapter-panel::after {
+  /* Dog-eared corner */
+  content: "";
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 28px; height: 28px;
+  background: linear-gradient(135deg, transparent 50%, rgba(0, 0, 0, 0.12) 50%, rgba(200, 160, 60, 0.18) 52%);
+  border-radius: 0 0 4px 0;
+}
+#chapter-panel.note-hidden {
+  opacity: 0;
+  transform: rotate(-2.2deg) translateY(20px) scale(0.96);
+  pointer-events: none;
 }
 .chapter-panel-inner {
-  padding: 22px 26px 22px;
-  max-height: 62vh;
+  padding: 28px 26px 24px;
+  max-height: 58vh;
   overflow-y: auto;
+  position: relative;
 }
 .chapter-title {
-  font-family: var(--font-serif);
-  font-weight: 600; font-size: 28px;
-  line-height: 1.18; letter-spacing: -0.4px;
-  color: var(--ink); margin-bottom: 10px;
+  font-family: 'Caveat', 'Fraunces', cursive;
+  font-weight: 700; font-size: 34px;
+  line-height: 1.1; letter-spacing: 0px;
+  color: #2a2418; margin-bottom: 8px;
+  text-decoration: underline;
+  text-decoration-color: rgba(168, 69, 32, 0.4);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 .chapter-meta {
   display: flex; align-items: center; gap: 8px;
-  font-size: 12.5px; color: var(--ink-muted);
-  font-weight: 500; letter-spacing: 0.2px;
-  margin-bottom: 16px;
+  font-family: 'Caveat', cursive;
+  font-size: 16px; color: #6b5a2a;
+  font-weight: 500;
+  margin-bottom: 14px;
 }
-.meta-dot { color: var(--paper-dim); }
+.meta-dot { color: #b8924a; }
 .chapter-image {
-  width: 100%; height: auto; max-height: 240px;
+  width: 100%; height: auto; max-height: 200px;
   object-fit: cover;
-  border-radius: 2px; margin-bottom: 16px;
-  filter: saturate(0.92);
+  border-radius: 1px;
+  margin-bottom: 14px;
+  filter: saturate(0.88) sepia(0.08);
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.15);
+  border: 4px solid #fffde3;
+  transform: rotate(0.6deg);
 }
 .chapter-body {
-  font-family: var(--font-serif);
-  font-weight: 400; font-size: 16.5px;
-  line-height: 1.68; color: var(--ink-soft);
+  font-family: 'Caveat', 'Fraunces', cursive;
+  font-weight: 500; font-size: 19px;
+  line-height: 1.42; color: #2a2418;
+  letter-spacing: 0.1px;
 }
 
-/* Subtle fade-in on chapter change */
 .chapter-pulse .chapter-panel-inner {
   animation: chapterIn 0.55s var(--ease) both;
 }
@@ -195,6 +239,10 @@ body {
   from { opacity: 0; transform: translateY(6px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* Custom scrollbar inside the note */
+.chapter-panel-inner::-webkit-scrollbar { width: 4px; }
+.chapter-panel-inner::-webkit-scrollbar-thumb { background: rgba(120, 90, 30, 0.3); border-radius: 2px; }
 
 /* ── Story controls (scrubber + arrows) ── */
 #story-controls {
@@ -553,9 +601,9 @@ body {
     left: 14px; right: 14px; bottom: 140px;
     width: auto; max-width: calc(100vw - 28px);
   }
-  .chapter-panel-inner { max-height: 42vh; padding: 18px 18px 16px; }
-  .chapter-title { font-size: 22px; }
-  .chapter-body  { font-size: 15.5px; }
+  .chapter-panel-inner { max-height: 42vh; padding: 22px 20px 18px; }
+  .chapter-title { font-size: 28px; }
+  .chapter-body  { font-size: 17px; }
 
   .logo-text { display: none; }
   #location-pill { font-size: 10.5px; padding: 5px 12px; letter-spacing: 1.2px; }
