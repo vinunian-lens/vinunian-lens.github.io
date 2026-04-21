@@ -262,7 +262,7 @@ function renderLocationPill() {
   }
 }
 
-// ── Pins (equirectangular projection) ────────────────────────
+// ── Pins (perspective-correct projection) ─────────────────────
 function renderPins() {
   const layer = $("annotations-layer");
   layer.innerHTML = "";
@@ -271,28 +271,48 @@ function renderPins() {
 
   const vw   = layer.clientWidth;
   const vh   = layer.clientHeight;
-  const hfov = viewer.getHfov();
-  const vfov = hfov * (vh / vw); // vertical FOV derived from hfov + aspect
+  const hfov = viewer.getHfov() * Math.PI / 180;
+
+  // Pre-compute camera rotation
+  const cYaw   = state.yaw   * Math.PI / 180;
+  const cPitch = state.pitch * Math.PI / 180;
+  const cosY = Math.cos(-cYaw),   sinY = Math.sin(-cYaw);
+  const cosP = Math.cos(-cPitch), sinP = Math.sin(-cPitch);
 
   STORY_CHAPTERS.forEach((m, idx) => {
     if (m.location !== sceneId) return;
 
     const isActive = idx === state.chapterIndex;
 
-    // Yaw diff (shortest arc)
-    const yawDiff = angleDiff(state.yaw, m.yaw);
-    const pitchDiff = (m.pitch || 0) - state.pitch;
+    // Point on unit sphere
+    const pYaw   = m.yaw   * Math.PI / 180;
+    const pPitch = (m.pitch || 0) * Math.PI / 180;
+    const px =  Math.sin(pYaw) * Math.cos(pPitch);
+    const py =  Math.sin(pPitch);
+    const pz =  Math.cos(pYaw) * Math.cos(pPitch);
 
-    // Equirectangular projection: degrees → pixels
-    const sx = (vw / 2) - (yawDiff / hfov) * vw;
-    const sy = (vh / 2) - (pitchDiff / vfov) * vh;
+    // Rotate into camera space: yaw then pitch
+    const x1 =  px * cosY + pz * sinY;
+    const y1 =  py;
+    const z1 = -px * sinY + pz * cosY;
+
+    const x2 =  x1;
+    const y2 =  y1 * cosP - z1 * sinP;
+    const z2 =  y1 * sinP + z1 * cosP;
+
+    // Behind camera — skip
+    if (z2 <= 0.01) return;
+
+    // Perspective projection
+    const sx = (vw / 2) - (x2 / z2) * (vw / 2) / Math.tan(hfov / 2);
+    const sy = (vh / 2) + (y2 / z2) * (vh / 2) / Math.tan(hfov / 2);
 
     // Clip: only show if on screen (with margin)
     const margin = 40;
     if (sx < -margin || sx > vw + margin || sy < -margin || sy > vh + margin) return;
 
     // Opacity: fade near edges
-    const edgeFade = 60;
+    const edgeFade = 80;
     const ox = Math.min(sx, vw - sx);
     const oy = Math.min(sy, vh - sy);
     const edgeDist = Math.min(ox, oy);
@@ -308,10 +328,10 @@ function renderPins() {
   });
 }
 
-const locationPinSVG = `<svg viewBox="0 0 24 36" width="28" height="42" fill="none">
-  <path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24C24 5.4 18.6 0 12 0zm0 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-        fill="currentColor"/>
-  <circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.4"/>
+const locationPinSVG = `<svg viewBox="0 0 24 36" width="30" height="45" fill="none">
+  <path d="M12 1C5.9 1 1 5.9 1 12c0 9 11 23 11 23s11-14 11-23c0-6.1-4.9-11-11-11z"
+        fill="#a84520" stroke="#fff8b0" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="5" fill="#fff8b0"/>
 </svg>`;
 
 // ── Table of Contents (flat ordered list, location as tag) ────
