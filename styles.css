@@ -508,8 +508,11 @@ body {
   opacity: 0; visibility: hidden; pointer-events: none;
 }
 .cover-content {
-  text-align: center; color: var(--paper);
-  padding: 40px; max-width: 680px;
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  color: var(--paper);
+  padding: 40px; max-width: 960px;
   max-height: calc(100vh - 40px);
   overflow-y: auto;
   animation: coverIn 0.9s var(--ease) both;
@@ -519,13 +522,21 @@ body {
   to   { opacity: 1; transform: translateY(0);    }
 }
 
+/* ── Left column: photo + short bio ── */
+.cover-left {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* ── Polaroid on cover ── */
 .cover-polaroid {
   position: relative;
   display: inline-block;
   background: #fffdf4;
   padding: 14px 14px 54px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   box-shadow:
     0 2px 4px rgba(0, 0, 0, 0.15),
     0 12px 28px rgba(0, 0, 0, 0.45);
@@ -558,6 +569,24 @@ body {
   letter-spacing: 0.3px;
 }
 
+/* Short bio under Polaroid (left column) */
+.cover-bio-short {
+  max-width: 248px;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: rgba(247, 241, 227, 0.82);
+  margin: 0;
+}
+
+/* ── Right column: title + purpose + button ── */
+.cover-right {
+  flex: 1;
+  min-width: 0;
+}
+
 .cover-eyebrow {
   font-size: 11.5px; font-weight: 600;
   letter-spacing: 4px; text-transform: uppercase;
@@ -566,48 +595,16 @@ body {
 .cover-title {
   font-family: var(--font-serif);
   font-weight: 600;
-  font-size: clamp(40px, 5.8vw, 68px);
+  font-size: clamp(36px, 5vw, 64px);
   line-height: 1.05; letter-spacing: -1.2px;
-  color: var(--paper); margin-bottom: 32px;
+  color: var(--paper); margin-bottom: 24px;
 }
 .cover-subtitle {
   font-family: var(--font-serif);
-  font-size: 19px; line-height: 1.6;
+  font-size: 17px; line-height: 1.65;
   color: rgba(247, 241, 227, 0.82);
-  margin-bottom: 40px;
+  margin-bottom: 36px;
   font-style: italic; font-weight: 400;
-}
-
-/* ── Bio block (left-aligned) ── */
-.cover-bio {
-  text-align: left;
-  max-width: 580px;
-  margin: 0 auto 48px;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 17px;
-  line-height: 1.75;
-  color: rgba(247, 241, 227, 0.88);
-}
-.cover-bio p {
-  margin: 0 0 18px;
-}
-.cover-bio p:last-child {
-  margin-bottom: 0;
-}
-.cover-bio strong {
-  font-weight: 600;
-  font-style: normal;
-  color: var(--paper);
-}
-.cover-bio-standalone {
-  text-align: center;
-  font-size: 19px;
-  color: var(--gold);
-  margin: 28px 0 !important;
-  font-style: italic;
-  font-weight: 500;
-  letter-spacing: 0.2px;
 }
 .cover-btn {
   font-family: var(--font-sans);
@@ -702,10 +699,10 @@ body {
   .scrubber-dot { width: 8px; height: 8px; }
   .scrubber-dot.active { width: 22px; }
 
-  .cover-content { padding: 24px; }
+  .cover-content { padding: 24px; flex-direction: column; gap: 32px; }
   .polaroid-photo { width: 170px; height: 200px; }
-  .cover-polaroid { margin-bottom: 28px; padding: 12px 12px 44px; }
+  .cover-polaroid { margin-bottom: 16px; padding: 12px 12px 44px; }
   .polaroid-caption { font-size: 20px; bottom: 10px; }
-  .cover-bio { font-size: 15.5px; line-height: 1.7; margin-bottom: 36px; }
-  .cover-bio-standalone { font-size: 17px; margin: 22px 0 !important; }
+  .cover-bio-short { max-width: 200px; font-size: 13.5px; }
+  .cover-right { text-align: center; }
 }
