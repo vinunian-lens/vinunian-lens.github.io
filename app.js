@@ -511,6 +511,9 @@ function wire() {
 
 // ── Init ──────────────────────────────────────────────────────
 async function init() {
+  // Wire UI first — ensures Begin button always works even if data load fails
+  wire();
+
   try {
     await loadData();
   } catch (err) {
@@ -519,13 +522,17 @@ async function init() {
     return;
   }
 
+  // Normalize yaw values outside [0, 360)
+  STORY_CHAPTERS.forEach(ch => {
+    ch.yaw = ((ch.yaw % 360) + 360) % 360;
+  });
+
   renderTOC();
   renderRoutes();
   renderScrubber();
   renderChapterPanel();
   renderProgress();
   renderLocationPill();
-  wire();
 
   // Wait for Service Worker control before loading tiles (tile proxy).
   if ("serviceWorker" in navigator) {
