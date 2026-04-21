@@ -13,6 +13,7 @@ const state = {
   chapterIndex: 0,
   currentScene: null,
   yaw: 0,
+  pitch: 0,
   pendingYaw: null,
   sidebarOpen: false,
   tab: "story",
@@ -143,10 +144,13 @@ async function initPannellum(sceneId) {
         viewer.setYaw(state.pendingYaw);
         state.pendingYaw = null;
       }
-      const newYaw = ((viewer.getYaw() % 360) + 360) % 360;
-      const now    = Date.now();
-      if (Math.abs(newYaw - state.yaw) > 0.3 && now - lastPinRender > 50) {
+      const newYaw   = ((viewer.getYaw() % 360) + 360) % 360;
+      const newPitch = viewer.getPitch();
+      const now      = Date.now();
+      if ((Math.abs(newYaw - state.yaw) > 0.3 || Math.abs(newPitch - state.pitch) > 0.3)
+          && now - lastPinRender > 50) {
         state.yaw     = newYaw;
+        state.pitch   = newPitch;
         lastPinRender = now;
         $("yaw-display").textContent = `${Math.round(newYaw)}°`;
         if (!state.browseMode) renderPins();
@@ -258,33 +262,57 @@ function renderLocationPill() {
   }
 }
 
-// ── Pins ──────────────────────────────────────────────────────
+// ── Pins (equirectangular projection) ────────────────────────
 function renderPins() {
   const layer = $("annotations-layer");
   layer.innerHTML = "";
+  if (!viewer) return;
   const sceneId = STORY_CHAPTERS[state.chapterIndex].location;
+
+  const vw   = layer.clientWidth;
+  const vh   = layer.clientHeight;
+  const hfov = viewer.getHfov();
+  const vfov = hfov * (vh / vw); // vertical FOV derived from hfov + aspect
 
   STORY_CHAPTERS.forEach((m, idx) => {
     if (m.location !== sceneId) return;
 
     const isActive = idx === state.chapterIndex;
-    const diff     = angleDiff(state.yaw, m.yaw);
-    const range    = 36;
-    if (Math.abs(diff) > range) return;
 
-    const sx   = 50 - (diff / range) * 26;
-    const sy   = Math.min(82, Math.max(16, 50 + (m.pitch || 0) * 0.4));
-    const base = Math.max(0.15, 1 - Math.abs(diff) / range);
-    const op   = isActive ? 1 : base * 0.55;
+    // Yaw diff (shortest arc)
+    const yawDiff = angleDiff(state.yaw, m.yaw);
+    const pitchDiff = (m.pitch || 0) - state.pitch;
+
+    // Equirectangular projection: degrees → pixels
+    const sx = (vw / 2) - (yawDiff / hfov) * vw;
+    const sy = (vh / 2) + (pitchDiff / vfov) * vh;
+
+    // Clip: only show if on screen (with margin)
+    const margin = 40;
+    if (sx < -margin || sx > vw + margin || sy < -margin || sy > vh + margin) return;
+
+    // Opacity: fade near edges
+    const edgeFade = 60;
+    const ox = Math.min(sx, vw - sx);
+    const oy = Math.min(sy, vh - sy);
+    const edgeDist = Math.min(ox, oy);
+    const base = edgeDist < edgeFade ? Math.max(0.15, edgeDist / edgeFade) : 1;
+    const op   = isActive ? 1 : base * 0.6;
 
     const pin = el("div", "annotation-pin visible" + (isActive ? " active" : ""));
-    pin.style.cssText = `left:${sx.toFixed(1)}%;top:${sy.toFixed(1)}%;opacity:${op.toFixed(2)}`;
+    pin.style.cssText = `left:${sx.toFixed(1)}px;top:${sy.toFixed(1)}px;opacity:${op.toFixed(2)}`;
     pin.title = `Moment ${m.order} — ${m.title}`;
-    pin.innerHTML = `<div class="pin-dot"><span class="pin-num">${m.order}</span></div>`;
+    pin.innerHTML = `<div class="pin-icon">${locationPinSVG}</div>`;
     pin.addEventListener("click", e => { e.stopPropagation(); goToChapter(idx); });
     layer.appendChild(pin);
   });
 }
+
+const locationPinSVG = `<svg viewBox="0 0 24 36" width="28" height="42" fill="none">
+  <path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24C24 5.4 18.6 0 12 0zm0 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
+        fill="currentColor"/>
+  <circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.4"/>
+</svg>`;
 
 // ── Table of Contents (flat ordered list, location as tag) ────
 function renderTOC() {

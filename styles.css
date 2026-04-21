@@ -238,31 +238,30 @@ body {
   white-space: nowrap;
 }
 
-/* ── Annotation pins ── */
+/* ── Annotation pins (location marker) ── */
 .annotation-pin {
   position: absolute; z-index: 50;
   pointer-events: all; cursor: pointer;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+  /* Anchor at the pin tip (bottom center of the teardrop) */
+  transform: translate(-50%, -100%);
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
 }
-.pin-dot {
-  width: 36px; height: 36px; border-radius: 50%;
-  background: var(--paper); color: var(--accent);
-  border: 2px solid var(--accent);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-serif); font-weight: 700; font-size: 14px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
-  transition: transform 0.25s var(--ease), background var(--t);
+.pin-icon {
+  color: var(--accent);
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5));
+  transition: transform 0.25s var(--ease), filter var(--t);
 }
-.annotation-pin:hover .pin-dot { transform: scale(1.15); }
-.annotation-pin.active .pin-dot {
-  background: var(--accent); color: var(--paper);
-  box-shadow: 0 6px 22px rgba(168, 69, 32, 0.55);
+.annotation-pin:hover .pin-icon {
+  transform: scale(1.18);
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.6));
+}
+.annotation-pin.active .pin-icon {
+  color: var(--accent-hover);
   animation: pinPulse 2s ease-in-out infinite;
 }
 @keyframes pinPulse {
-  0%, 100% { box-shadow: 0 6px 22px rgba(168, 69, 32, 0.55); }
-  50%      { box-shadow: 0 6px 32px rgba(168, 69, 32, 0.9);  }
+  0%, 100% { filter: drop-shadow(0 4px 8px rgba(196, 90, 50, 0.5)); }
+  50%      { filter: drop-shadow(0 6px 16px rgba(196, 90, 50, 0.85)); }
 }
 
 /* ── Sidebar ── */
