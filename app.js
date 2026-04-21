@@ -436,10 +436,6 @@ async function init() {
     return;
   }
 
-  // Update cover subtitle with actual chapter count
-  const sub = document.querySelector(".cover-subtitle");
-  if (sub) sub.textContent = `${STORY_CHAPTERS.length} moments across the VinUni campus — stepped through one at a time.`;
-
   renderTOC();
   renderRoutes();
   renderScrubber();
