@@ -285,7 +285,7 @@ function renderPins() {
 
     // Equirectangular projection: degrees → pixels
     const sx = (vw / 2) - (yawDiff / hfov) * vw;
-    const sy = (vh / 2) + (pitchDiff / vfov) * vh;
+    const sy = (vh / 2) - (pitchDiff / vfov) * vh;
 
     // Clip: only show if on screen (with margin)
     const margin = 40;
