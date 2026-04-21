@@ -225,6 +225,18 @@ body {
   border: 4px solid #fffde3;
   transform: rotate(0.6deg);
 }
+.chapter-video {
+  width: 100%; max-height: 220px;
+  border-radius: 1px;
+  margin-bottom: 14px;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.15);
+  border: 4px solid #fffde3;
+  transform: rotate(0.6deg);
+  background: #1a1512;
+}
+.chapter-video::-webkit-media-controls {
+  border-radius: 1px;
+}
 .chapter-body {
   font-family: 'Caveat', 'Fraunces', cursive;
   font-weight: 500; font-size: 19px;

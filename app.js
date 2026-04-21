@@ -230,8 +230,28 @@ function renderChapterPanel() {
   $("ch-body").textContent     = ch.body;
 
   const img = $("ch-image");
-  if (ch.image) { img.src = ch.image; img.style.display = "block"; }
-  else          { img.style.display  = "none"; img.removeAttribute("src"); }
+  const vid = $("ch-video");
+
+  if (ch.video) {
+    // Video takes priority over image
+    img.style.display  = "none";
+    img.removeAttribute("src");
+    vid.src            = ch.video;
+    vid.style.display  = "block";
+    vid.load();
+  } else if (ch.image) {
+    vid.style.display  = "none";
+    vid.removeAttribute("src");
+    vid.pause();
+    img.src            = ch.image;
+    img.style.display  = "block";
+  } else {
+    img.style.display  = "none";
+    img.removeAttribute("src");
+    vid.style.display  = "none";
+    vid.removeAttribute("src");
+    vid.pause();
+  }
 
   const panel = $("chapter-panel");
   panel.classList.toggle("note-hidden", !state.noteVisible);
