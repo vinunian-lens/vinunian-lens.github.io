@@ -304,8 +304,9 @@ function renderPins() {
     if (z2 <= 0.01) return;
 
     // Perspective projection
-    const sx = (vw / 2) - (x2 / z2) * (vw / 2) / Math.tan(hfov / 2);
-    const sy = (vh / 2) + (y2 / z2) * (vh / 2) / Math.tan(hfov / 2);
+    const f = (vw / 2) / Math.tan(hfov / 2);
+    const sx = (vw / 2) + (x2 / z2) * f;
+    const sy = (vh / 2) - (y2 / z2) * f;
 
     // Clip: only show if on screen (with margin)
     const margin = 40;
