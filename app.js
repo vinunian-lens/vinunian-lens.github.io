@@ -223,6 +223,12 @@ function hideCover() {
   document.body.classList.remove("cover-active");
   $("cover-screen").classList.add("cover-hidden");
 }
+function showCover() {
+  state.coverVisible = true;
+  document.body.classList.add("cover-active");
+  $("cover-screen").classList.remove("cover-hidden");
+  goToChapter(0);
+}
 function showOutro() {
   state.outroVisible = true;
   $("outro-screen").classList.remove("outro-hidden");
@@ -249,7 +255,9 @@ function renderChapterPanel() {
 
   if (ch.video) {
     // Video takes priority over image
+    img.onload = null; img.onerror = null;
     img.style.display  = "none";
+    img.classList.remove("img-loading");
     img.removeAttribute("src");
     vid.src            = ch.video;
     vid.style.display  = "block";
@@ -258,13 +266,24 @@ function renderChapterPanel() {
     vid.style.display  = "none";
     vid.removeAttribute("src");
     vid.pause();
-    img.style.display  = "none";
+    // Show shimmer skeleton immediately, swap to real image on load
+    img.onload = null; img.onerror = null;
     img.removeAttribute("src");
-    img.onload  = () => { img.style.display = "block"; };
-    img.onerror = () => {};
+    img.style.opacity = "";
+    img.classList.add("img-loading");
+    img.style.display = "block";
+    img.onload = () => {
+      img.classList.remove("img-loading");
+    };
+    img.onerror = () => {
+      img.classList.remove("img-loading");
+      img.style.display = "none";
+    };
     img.src = ch.image;
   } else {
+    img.onload = null; img.onerror = null;
     img.style.display  = "none";
+    img.classList.remove("img-loading");
     img.removeAttribute("src");
     vid.style.display  = "none";
     vid.removeAttribute("src");
@@ -506,7 +525,7 @@ function wire() {
     b.addEventListener("click", () => setTab(b.dataset.tab)));
 
   $("begin-btn"  ).addEventListener("click", () => hideCover());
-  $("restart-btn").addEventListener("click", () => { hideOutro(); goToChapter(0); });
+  $("restart-btn").addEventListener("click", () => { hideOutro(); showCover(); });
   $("browse-btn" ).addEventListener("click", () => { hideOutro(); toggleSidebar(true); setTab("story"); });
 
   document.addEventListener("keydown", e => {
