@@ -15,6 +15,7 @@ const state = {
   yaw: 0,
   pitch: 0,
   pendingYaw: null,
+  pendingPitch: null,
   sidebarOpen: false,
   tab: "story",
   coverVisible: true,
@@ -143,7 +144,9 @@ async function initPannellum(sceneId) {
     if (viewer) {
       if (state.pendingYaw !== null && viewer.isLoaded()) {
         viewer.setYaw(state.pendingYaw);
-        state.pendingYaw = null;
+        if (state.pendingPitch !== null) viewer.setPitch(state.pendingPitch);
+        state.pendingYaw   = null;
+        state.pendingPitch = null;
       }
       const newYaw   = ((viewer.getYaw() % 360) + 360) % 360;
       const newPitch = viewer.getPitch();
@@ -175,14 +178,23 @@ function goToChapter(index) {
   state.chapterIndex   = index;
   const ch = STORY_CHAPTERS[index];
 
+  const chPitch = ch.pitch || 0;
   if (ch.location !== state.currentScene) {
     state.currentScene = ch.location;
     state.pendingYaw   = ch.yaw;
+    state.pendingPitch = chPitch;
     initPannellum(ch.location);
   } else if (viewer && viewer.isLoaded()) {
-    try { viewer.setYaw(ch.yaw); } catch (_) { state.pendingYaw = ch.yaw; }
+    try {
+      viewer.setYaw(ch.yaw);
+      viewer.setPitch(chPitch);
+    } catch (_) {
+      state.pendingYaw   = ch.yaw;
+      state.pendingPitch = chPitch;
+    }
   } else {
-    state.pendingYaw = ch.yaw;
+    state.pendingYaw   = ch.yaw;
+    state.pendingPitch = chPitch;
   }
 
   renderChapterPanel();
@@ -363,7 +375,7 @@ function renderPins() {
   });
 }
 
-const locationPinSVG = `<svg viewBox="0 0 24 36" width="30" height="45" fill="none">
+const locationPinSVG = `<svg viewBox="0 0 24 36" width="36" height="45" fill="none">
   <path d="M12 1C5.9 1 1 5.9 1 12c0 9 11 23 11 23s11-14 11-23c0-6.1-4.9-11-11-11z"
         fill="#a84520" stroke="#fff8b0" stroke-width="1.5" stroke-linejoin="round"/>
   <circle cx="12" cy="12" r="5" fill="#fff8b0"/>
