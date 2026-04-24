@@ -400,7 +400,7 @@ function renderPins() {
   });
 }
 
-const locationPinSVG = `<svg viewBox="0 0 24 36" width="46" height="45" fill="none">
+const locationPinSVG = `<svg viewBox="0 0 24 36" width="50" height="45" fill="none">
   <path d="M12 1C5.9 1 1 5.9 1 12c0 9 11 23 11 23s11-14 11-23c0-6.1-4.9-11-11-11z"
         fill="#a84520" stroke="#fff8b0" stroke-width="1.5" stroke-linejoin="round"/>
   <circle cx="12" cy="12" r="5" fill="#fff8b0"/>

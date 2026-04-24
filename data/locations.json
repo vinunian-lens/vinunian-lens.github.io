@@ -6,6 +6,7 @@
     { "id": "o3",  "name": "Central Square", "desc": "Heart of the VinUni campus"               },
     { "id": "a21", "name": "Library",        "desc": "4,000 sqm learning resource centre"       },
     { "id": "o5",  "name": "Football Pitch", "desc": "FIFA-standard football pitch"             },
+    { "id": "o9",  "name": "Outdoor Amphitheatre", "desc": "A space for open-air events and performances."    },
     { "id": "c6",  "name": "Learning Theatre", "desc": "Course lectures are held here." },
     { "id": "j8",  "name": "Dormitory",      "desc": "Where things start."    },
     { "id": "a3",  "name": "Learning Common 24/7",      "desc": "Learning space that is always open."    },
