@@ -56,8 +56,8 @@
     {
       "order": 6,
       "location": "a3",
-      "yaw": 0,
-      "pitch": 0,
+      "yaw": 154,
+      "pitch": -5,
       "title": "Pausing for Reflection and Connecting with The Self",
       "body": "Watching my friends trying so hard at studying at the 24/7 learning area while I could not, my mind drifted back to high school, when I spent sleepless nights solving programming problems and preparing for contests. Back then, the satisfaction of cracking a difficult problem felt far more meaningful, and earning a medal was just a milestone, not a destination. I start to feel the urge of having those days back, when I really enjoy what I was doing and I clearly know the purpose of doing each task. This thought drive me to a decision of taking a gap year to rediscover my interests and fortunately, my good friends was supportive enough to encourage me to execute this brave decision.",
       "image": "assets/year2_247.jpeg",
@@ -123,6 +123,16 @@
       "body": "Returning to VinUniversity in the final semester created space for me to explore courses beyond the CECS major, including Digital Arts and Sciences and Arts Appreciation. Through activities like drawing, sketching, photography and small digital humanities projects, I discovered new creative interests I had never explored before, and I unexpectedly found them both enjoyable and meaningful. Besides that, interacting with first- and second-year students also brought quiet reminders of earlier stages of the journey. Experiences like these show how the final year is not only a time for completion, but also a moment to reconnect with curiosity and continue exploring interests that may shape future directions in unexpected ways.",
       "image": "assets/year4_learning_creative_courses.jpg",
       "date": "2026-03-03"
+    },
+    {
+      "order": 13,
+      "location": "i1",
+      "yaw": 0,
+      "pitch": 0,
+      "title": "Holding Onto the Final Moments",
+      "body": "As my graduation approaching in June 2026, everyday spaces on VinUni campus began to feel different for me: not because they changed, but because their meaning became clearer in time. Walking through familiar paths created a quiet awareness that this stage of the journey was coming to a close. It feels almost unreal how much I have changed from a shy boy, clueless with what I\u2019m doing to a more confident boy, happy with the present and knowing where I am going in the future. Moments like these often bring reflections not only on personal experiences, but also on friends who had already moved forward into their own next chapters. Sometimes I wonder if my friends who graduated last year would feel the same way. The final year becomes a space for noticing what might once have felt ordinary, allowing students to carry these memories with them as they prepare to continue their journeys beyond campus.",
+      "image": "assets/year4_walking.jpg",
+      "date": "2026-04-04"
     }
   ]
 }
