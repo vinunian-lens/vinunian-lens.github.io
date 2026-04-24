@@ -147,6 +147,9 @@ async function initPannellum(sceneId) {
         if (state.pendingPitch !== null) viewer.setPitch(state.pendingPitch);
         state.pendingYaw   = null;
         state.pendingPitch = null;
+        state.yaw   = ((viewer.getYaw() % 360) + 360) % 360;
+        state.pitch = viewer.getPitch();
+        if (!state.browseMode) renderPins();
       }
       const newYaw   = ((viewer.getYaw() % 360) + 360) % 360;
       const newPitch = viewer.getPitch();
@@ -255,8 +258,11 @@ function renderChapterPanel() {
     vid.style.display  = "none";
     vid.removeAttribute("src");
     vid.pause();
-    img.src            = ch.image;
-    img.style.display  = "block";
+    img.style.display  = "none";
+    img.removeAttribute("src");
+    img.onload  = () => { img.style.display = "block"; };
+    img.onerror = () => {};
+    img.src = ch.image;
   } else {
     img.style.display  = "none";
     img.removeAttribute("src");
