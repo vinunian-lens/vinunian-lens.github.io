@@ -1,5 +1,5 @@
 {
-  "_comment_chapters": "Each chapter is a moment in the story. Order matters — the story follows this sequence, not the location order. Images can be remote URLs or local paths like 'assets/photo.jpg'. Set image to null if there is none.",
+  "_comment_chapters": "Each chapter is a moment in the story. Order matters — the story follows this sequence, not the location order. Images can be remote URLs or local paths like 'assets/photo.jpg'. Set image to null if there is none. Set video to a local path for video chapters — video takes priority over image.",
 
   "chapters": [
     {
@@ -7,111 +7,122 @@
       "location": "o1",
       "yaw": 0,
       "pitch": 0,
-      "title": "Year 1: Online study via Zoom",
-      "body": "My first year at VinUni began entirely online through Zoom. Like many Cohort 2 students, I spent months seeing classmates only as small faces on a screen. I attended classes every day, yet still felt disconnected and unsure where I belonged.",
+      "title": "Mapping a Beginning from a Distance",
+      "body": "The journey of Cohort 2 at VinUniversity began in an unusual landscape: online classrooms through Zoom screens, where students met professors and classmates as small digital windows rather than offline campus. Although I did not struggle with my academic performance, I had a very hard time to imagine all of the connection, belonging, and community before I could actually meet everyone. Therefore, I felt so lost and could not have any close friends at the beginning.",
       "image": "assets/year1_online_class.JPEG",
       "date": "2021-09-09"
     },
     {
       "order": 2,
       "location": "j8",
-      "yaw": 62,
-      "pitch": -6,
-      "title": "Year 1: Meeting new friends",
-      "body": "Everything changed when we finally moved into the on-campus dormitory in the second semester. During quarantine, we spent most of our time together inside the dorm area, and those quiet days unexpectedly brought us closer. I became part of a friend group called “lâu đài tình ái” [a loving castel], and we filled our evenings with movies, late-night karaoke, and long conversations. Even though I had little academic motivation at the time, these friendships became my first anchor at VinUni.",
+      "yaw": 330,
+      "pitch": 7,
+      "title": "From Strangers to Friends on VinUni Campus",
+      "body": "When 300 cohort-2 students finally arrived on campus in the second semester, the dormitory became more than a residence, it became the first real meeting point on the VinUni journey map. During quarantine periods, shared routines and limited social exposure unexpectedly created space for deeper conversations and stronger bonds and I became part of a friend group called \u201clâu đài tình ái\u201d [a loving castel]. This showed how community at VinUni often begins not through formal structures, but through everyday moments of living together.",
       "image": "assets/year1_an_uong.jpeg",
-      "date": "2022-01-15"
+      "date": "2021-11-11"
     },
     {
       "order": 3,
       "location": "j8",
-      "yaw": 360,
-      "pitch": -25,
-      "title": "Year 1: The Year COVID Came to the Dorm",
-      "body": "First year, locked down in the dorm. We made the best of it — hallway badminton, midnight corridor conversations, and a lot of instant noodles. Stranger times, but somehow the closest we ever got as a floor.",
+      "yaw": 30,
+      "pitch": 7,
+      "title": "Friendship as the First Anchor Point in VinUni Journey",
+      "body": "Outside academic learning hours, evenings in the dormitory became spaces where the sense of belongings truly took shape. Music, movies, late-night karaoke, and long conversations transformed a group of individuals into a supporting network. Whenever I needed help, there was always somebody willing to be there for me and eventually, this friend group became my first anchor at VinUni.",
       "image": null,
       "video": "assets/year1_covid_test.mp4",
-      "date": "2022-02-21"
+      "date": "2022-02-01"
     },
     {
       "order": 4,
       "location": "c6",
       "yaw": 33,
       "pitch": -27,
-      "title": "Year 2: Feeling Lost",
-      "body": "Although I still found my major interesting, I began losing motivation and questioning why I was studying and what my future pathway might be.",
+      "title": "When the Path Forward Becomes Unclear",
+      "body": "At VinUniversity, it is common to see students sharing milestones on social media: excellent transcripts, club president champion of change, dean\u2019s list, president\u2019s list. While these achievements help some students stay motivated, others like me begin to feel pressured because my future uncertainty is more visible. In the second year, I became more reflective and started questioning: how the knowledge from courses like Linear Algebra or Advanced Probability and Statistics connected to my future, and what exactly do I want to do as a career. These unsolved anxiety drive me to withdraw in academic performance with missing assignments and lower-grade in GPA.",
       "image": "assets/year2_feeling_lost.jpeg",
-      "date": "2022-10-10"
+      "date": "2022-10-02"
     },
     {
       "order": 5,
-      "location": "o3",
-      "yaw": 90,
-      "pitch": -3,
-      "title": "The Tuesday Study Crew",
-      "body": "The CS group claimed this corner every Tuesday at 2pm. Unwritten rule — no one ever took our spot. It became less about studying and more about the ritual of showing up.",
-      "image": "https://picsum.photos/seed/vinuni3/800/500",
-      "date": "2024-09-10"
+      "location": "o5",
+      "yaw": 352,
+      "pitch": 7,
+      "title": "Finding Support from People at VinUniveristy",
+      "body": "Second year is also the time when the student journey at VinUniversity often begins expanding beyond classrooms and dormitories into shared apartments and more independent routines. Living together off campus created new rhythms of daily life, such as cooking, singing at the amphitheater, and long conversations about uncertainty and possibility. As our friendship grew stronger, I became more open to talk about my mixed feelings and personal struggle in studying. While I clearly like the major, I could not make the learning journey as enjoyable as before anymore.",
+      "image": "assets/year2_move_out.jpeg",
+      "date": "2023-02-21"
     },
     {
       "order": 6,
-      "location": "o3",
-      "yaw": 210,
-      "pitch": -2,
-      "title": "Caught in the Rain",
-      "body": "A tropical downpour out of nowhere. I sheltered under the overhang for forty minutes with half the campus, creating an impromptu networking session while waiting for the skies to clear.",
-      "image": null,
-      "date": "2024-10-03"
+      "location": "a3",
+      "yaw": 0,
+      "pitch": 0,
+      "title": "Pausing for Reflection and Connecting with The Self",
+      "body": "Watching my friends trying so hard at studying at the 24/7 learning area while I could not, my mind drifted back to high school, when I spent sleepless nights solving programming problems and preparing for contests. Back then, the satisfaction of cracking a difficult problem felt far more meaningful, and earning a medal was just a milestone, not a destination. I start to feel the urge of having those days back, when I really enjoy what I was doing and I clearly know the purpose of doing each task. This thought drive me to a decision of taking a gap year to rediscover my interests and fortunately, my good friends was supportive enough to encourage me to execute this brave decision.",
+      "image": "assets/year2_247.jpeg",
+      "date": "2023-04-24"
     },
     {
       "order": 7,
-      "location": "a21",
-      "yaw": 180,
-      "pitch": 10,
-      "title": "My Favourite Window Seat",
-      "body": "Second floor, east corner. Perfect light, the quiet hum of AC, strong WiFi. I started measuring productivity by how often I could claim that seat.",
-      "image": "https://picsum.photos/seed/vinuni5/800/500",
-      "date": "2024-11-08"
+      "location": "o1",
+      "yaw": 297,
+      "pitch": 21,
+      "title": "A Necessary Gap to Move Forward with Clarity",
+      "body": "Taking a gap year now felt more like an intentional turning point rather than a running away from the problem. Stepping away from the regular academic timeline, I was allowed to spend time at home, playing with kids and reading more of my favorite anime comics, which thereby helped me with staying connected to my true self. This fueled me to reach out for an opportunity that I have always been curious and dreamed of but too scared to do: joining a summer AI program and applying for an AI Engineer position and spending about five months working full-time, from 9 a.m. to 5 p.m. Interestingly, several students within the same living community at VinUni made similar decisions at different moments: my second-year roommate, also a VinUni student in CECS, took a gap year at the same time - without either of us knowing beforehand. In fact, all four of my roommates from that year eventually took gap years, just at different times. This shows that \u201cuncommon\u201d timelines are not that uncommon. These detours reflect how student journeys are shaped not by a single fixed route, but by the willingness to explore before continuing forward with clearer purpose.",
+      "image": "assets/year2_internship.jpeg",
+      "date": "2023-12-30"
     },
     {
       "order": 8,
-      "location": "a21",
-      "yaw": 280,
-      "pitch": 0,
-      "title": "The Algorithms All-Nighter",
-      "body": "Library closes at 11pm — had to pack up and move to the lobby. Survived the midterm regardless. The kind of night you don't remember fondly until a year later.",
+      "location": "o3",
+      "yaw": 210,
+      "pitch": -2,
+      "title": "Returning to a Familiar Place That Feels Different - VinUniversity Campus",
+      "body": "Returning to VinUniversity after a gap year felt both familiar and strange at the same time: Study rooms that were once filled with close friends were now shared with younger cohorts, while many former classmates were already preparing for graduation and their next steps. My friendgroup gatherings became less frequent, and places like the dormitory and amphitheater felt quieter than before. Yet the friendships formed in earlier years did not disappear, we just simply changed the way we support each other. This stage of the journey reflects how university spaces evolve alongside students themselves, reminding us that belonging is not tied to a single moment, but continues through connections that adapt over time.",
       "image": null,
-      "date": "2024-11-14"
+      "video": "assets/year3_central_square.mp4",
+      "date": "2024-09-09"
     },
     {
       "order": 9,
-      "location": "k3",
-      "yaw": 45,
-      "pitch": -15,
-      "title": "Six AM, Empty Lanes",
-      "body": "Cold water, empty lanes, just the sound of splashing. Best mental reset before a long lecture day. Nobody else thought it was worth it — that was the point.",
-      "image": "https://picsum.photos/seed/vinuni7/800/500",
-      "date": "2024-10-15"
+      "location": "a21",
+      "yaw": 340,
+      "pitch": 0,
+      "title": "Rediscovering Passion Through Research",
+      "body": "Returning to campus also brought a renewed connection to the academic learning process. Compared to the structured, repetitive rhythm of full-time industry work, the university environment offered space to think more freely and explore ideas more deeply alongside peers. I also began working on research with professors at VinUni and a partner university in the United States gradually reshaped academic motivation into a clearer path forward. Long days spent reading papers and coding in learning spaces such as the Mac Lab and 24/7 study areas became part of a new routine. Through these experiences, research emerged not only as an academic activity, but as a direction that allowed freedom to think, to explore my passion, to fulfill my curiosity and even to work on my own schedule.",
+      "image": "assets/year3_doing_research.JPG",
+      "date": "2024-12-22"
     },
     {
       "order": 10,
-      "location": "o5",
-      "yaw": 270,
-      "pitch": -5,
-      "title": "The Inter-Faculty Final",
-      "body": "Engineering beat Business 3–2. I scored the winner with a left-foot curler in the 89th minute and sent the stadium into absolute pandemonium. The highlight of my athletic life on this campus.",
-      "image": "https://picsum.photos/seed/vinuni8/800/500",
-      "date": "2024-10-22"
+      "location": "o3",
+      "yaw": 54,
+      "pitch": 43,
+      "title": "Meeting Mentors Who Expand the Map Forward",
+      "body": "During the final year at VinUniversity, participating in an exchange semester at Hong Kong University of Science and Technology (HKUST) became an important extension of the academic journey beyond campus borders. This is where I honorably got to work with Professor May Fung who offered a glimpse of what supportive mentorship in research can look like: guidance that makes complex ideas feel approachable and future paths feel possible. Through collaboration with both academic and industry partners, our research project developed during this exchange is now being prepared for patent submission. Getting connected with a dedicated mentor can help students stay motivated to continue pursuing their goals, especially when they can see people already working in the field and flourishing in the present. Such mentorship makes future pathways feel more visible and worth trying hard for during undergraduate years.",
+      "image": "assets/year4_exchange.jpg",
+      "date": "2025-11-11"
     },
     {
       "order": 11,
-      "location": "o5",
-      "yaw": 20,
-      "pitch": -3,
-      "title": "A Note to Future Me",
-      "body": "Thursday drills at 5pm sharp. Fix the first touch. Keep the team close. Keep showing up — the small Thursdays are what made the big October nights possible.",
-      "image": null,
-      "date": "2024-10-28"
+      "location": "o3",
+      "yaw": 307,
+      "pitch": 66,
+      "title": "Familiar Feelings in a New Place",
+      "body": "Meeting Vietnamese freshmen at HKUST often brought back memories of the early days at VinUniversity, especially the friendships first formed during dormitory life. At the same time, daily walks between the dorm and library gradually became part of a new routine, creating a sense of familiarity in an unfamiliar environment and helping shape the rhythm of life during the exchange semester. Yet whenever I accidentally came across photos of VinUniversity on social media, I found myself missing the campus more than I had anticipated. It was during these moments that I realized how much my relationship with the university had changed: from once feeling uncertain about where I belonged to gradually seeing VinUniversity as a place that felt like home and an important part of my sense of belonging.",
+      "image": "assets/year4_hkust_freshmans.JPEG",
+      "date": "2025-12-12"
+    },
+    {
+      "order": 12,
+      "location": "i1",
+      "yaw": 0,
+      "pitch": 0,
+      "title": "Exploring Myself beyond My Major",
+      "body": "Returning to VinUniversity in the final semester created space for me to explore courses beyond the CECS major, including Digital Arts and Sciences and Arts Appreciation. Through activities like drawing, sketching, photography and small digital humanities projects, I discovered new creative interests I had never explored before, and I unexpectedly found them both enjoyable and meaningful. Besides that, interacting with first- and second-year students also brought quiet reminders of earlier stages of the journey. Experiences like these show how the final year is not only a time for completion, but also a moment to reconnect with curiosity and continue exploring interests that may shape future directions in unexpected ways.",
+      "image": "assets/year4_learning_creative_courses.jpg",
+      "date": "2026-03-03"
     }
   ]
 }
