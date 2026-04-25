@@ -73,6 +73,14 @@
     },
     {
       "location": "o1",
+      "yaw": 45,
+      "pitch": 90,
+      "title": "Gap Year - Go Home to Find Myself",
+      "image": "assets/gapyear.jpg",
+      "date": "2023-07-10"
+    },
+    {
+      "location": "o1",
       "yaw": 297,
       "pitch": 21,
       "title": "Gap Year - A Necessary Gap to Move Forward with Clarity",
