@@ -242,6 +242,15 @@ function toggleNote(force) {
   $("chapter-panel").classList.toggle("note-hidden", !state.noteVisible);
 }
 
+// ── Scroll hint ───────────────────────────────────────────────
+function updateScrollHint() {
+  const inner = document.querySelector(".chapter-panel-inner");
+  const hint  = $("scroll-hint");
+  if (!inner || !hint) return;
+  const atBottom = inner.scrollTop + inner.clientHeight >= inner.scrollHeight - 6;
+  hint.classList.toggle("hidden", atBottom);
+}
+
 // ── Renderers ─────────────────────────────────────────────────
 function renderChapterPanel() {
   const ch = STORY_CHAPTERS[state.chapterIndex];
@@ -295,6 +304,10 @@ function renderChapterPanel() {
   panel.classList.remove("chapter-pulse");
   void panel.offsetWidth;
   panel.classList.add("chapter-pulse");
+
+  const inner = document.querySelector(".chapter-panel-inner");
+  if (inner) inner.scrollTop = 0;
+  requestAnimationFrame(updateScrollHint);
 }
 
 function renderScrubber() {
@@ -517,6 +530,9 @@ function setTab(tabId) {
 function wire() {
   $("toggle-sidebar-btn").addEventListener("click", () => toggleSidebar());
   $("close-sidebar-btn" ).addEventListener("click", () => toggleSidebar(false));
+
+  document.querySelector(".chapter-panel-inner")
+    .addEventListener("scroll", updateScrollHint);
 
   $("next-btn").addEventListener("click", () => nextChapter());
   $("prev-btn").addEventListener("click", () => prevChapter());

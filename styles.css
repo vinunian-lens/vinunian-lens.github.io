@@ -150,7 +150,7 @@ body {
 #chapter-panel {
   position: absolute; left: 36px; bottom: 128px;
   z-index: 90;
-  width: 442px; max-width: calc(100vw - 72px);
+  width: 575px; max-width: calc(100vw - 72px);
   /* Warm yellow sticky paper with subtle gradient + paper texture */
   background:
     linear-gradient(135deg, #fff4a3 0%, #ffeb82 50%, #ffe066 100%);
@@ -261,6 +261,28 @@ body {
   font-weight: 500; font-size: 24px;
   line-height: 1.42; color: #2a2418;
   letter-spacing: 0.1px;
+}
+
+/* Scroll hint arrow */
+.scroll-hint {
+  position: absolute;
+  bottom: 44px; right: 14px;
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(42, 36, 24, 0.45);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  animation: scrollBounce 1.8s ease-in-out infinite;
+  z-index: 1;
+}
+.scroll-hint.hidden {
+  opacity: 0;
+  animation: none;
+}
+.scroll-hint svg { width: 20px; height: 20px; }
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(4px); }
 }
 
 .chapter-pulse .chapter-panel-inner {
