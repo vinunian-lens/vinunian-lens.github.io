@@ -206,6 +206,11 @@ function goToChapter(index) {
   renderLocationPill();
   renderTOC();
   renderPins();
+  renderFinHint();
+}
+function renderFinHint() {
+  const hint = $("fin-hint");
+  if (hint) hint.classList.toggle("visible", state.chapterIndex === STORY_CHAPTERS.length - 1);
 }
 function nextChapter() {
   if (state.browseMode) { goToChapter(0); return; }

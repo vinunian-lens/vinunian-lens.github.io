@@ -318,6 +318,23 @@ body {
 .story-arrow:hover { background: rgba(255, 255, 255, 0.1); transform: scale(1.08); }
 .story-arrow svg { width: 18px; height: 18px; }
 
+.fin-hint {
+  font-family: var(--font-serif);
+  font-size: 12px; font-style: italic; font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: max-width 0.45s var(--ease), opacity 0.45s var(--ease);
+}
+.fin-hint.visible {
+  max-width: 48px;
+  opacity: 1;
+}
+
 .scrubber { display: flex; align-items: center; gap: 10px; }
 .scrubber-dot {
   width: 10px; height: 10px; border-radius: 50%;
