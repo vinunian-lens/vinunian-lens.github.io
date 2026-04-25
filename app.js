@@ -321,8 +321,9 @@ function renderScrubber() {
     sc.appendChild(dot);
   });
   if (state.chapterIndex === STORY_CHAPTERS.length - 1) {
-    const ghost = el("span", "scrubber-dot scrubber-dot-ghost");
+    const ghost = el("button", "scrubber-dot scrubber-dot-ghost");
     ghost.setAttribute("aria-hidden", "true");
+    ghost.disabled = true;
     sc.appendChild(ghost);
   }
   $("ch-counter-num").textContent   = state.chapterIndex + 1;

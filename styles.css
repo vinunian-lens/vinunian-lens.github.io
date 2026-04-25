@@ -332,9 +332,10 @@ body {
   width: 28px; border-radius: 6px;
 }
 .scrubber-dot-ghost {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.2);
   cursor: default;
   pointer-events: none;
+  opacity: 0.7;
 }
 
 #chapter-counter {
