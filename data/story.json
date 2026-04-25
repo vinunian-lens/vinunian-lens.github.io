@@ -65,6 +65,13 @@
       "date": "2023-04-24"
     },
     {
+      "location": "b0",
+      "yaw": 245,
+      "pitch": 17,
+      "title": "End of Year 2",
+      "date": "2023-06-30"
+    },
+    {
       "location": "o1",
       "yaw": 297,
       "pitch": 21,
@@ -84,13 +91,20 @@
       "date": "2024-09-09"
     },
     {
-      "location": "a21",
-      "yaw": 340,
+      "location": "a23",
+      "yaw": 0,
       "pitch": 0,
       "title": "Year 3 - Rediscovering Passion Through Research",
       "body": "Returning to campus also brought a renewed connection to the academic learning process. Compared to the structured, repetitive rhythm of full-time industry work, the university environment offered space to think more freely and explore ideas more deeply alongside peers. I also began working on research with professors at VinUni and a partner university in the United States gradually reshaped academic motivation into a clearer path forward. Long days spent reading papers and coding in learning spaces such as the Mac Lab and 24/7 study areas became part of a new routine. Through these experiences, research emerged not only as an academic activity, but as a direction that allowed freedom to think, to explore my passion, to fulfill my curiosity and even to work on my own schedule.",
       "image": "assets/year3_doing_research.JPG",
       "date": "2024-12-22"
+    },
+    {
+      "location": "o4",
+      "yaw": 0,
+      "pitch": 0,
+      "title": "End of Year 3",
+      "date": "2024-06-30"
     },
     {
       "location": "o3",

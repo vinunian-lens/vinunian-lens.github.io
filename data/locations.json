@@ -9,6 +9,9 @@
     { "id": "o9",  "name": "Outdoor Amphitheatre", "desc": "A space for open-air events and performances."    },
     { "id": "c6",  "name": "Learning Theatre", "desc": "Course lectures are held here." },
     { "id": "j8",  "name": "Dormitory",      "desc": "Where things start."    },
+    { "id": "a23",  "name": "Mac Lab", "desc": "Computer lab with Mac devices." },
+    { "id": "b0",  "name": "Front Elevation",      "desc": "Main entrance facade of the building."    },
+    { "id": "o4",  "name": "Rose Garden",      "desc": "A tranquil outdoor space with flowers and seating."    },
     { "id": "a3",  "name": "Learning Common 24/7",      "desc": "Learning space that is always open."    },
     { "id": "i1",  "name": "Grand Hall",      "desc": "Where alumni are honored."    }
   ]
