@@ -75,7 +75,7 @@ async function loadData() {
   const storyData = await storyResp.json();
 
   ROUTES         = locData.locations || [];
-  STORY_CHAPTERS = (storyData.chapters || []).sort((a, b) => a.order - b.order);
+  STORY_CHAPTERS = storyData.chapters || [];
 
   // Resolve local image paths: if image starts with "assets/", prefix with nothing
   // (already relative to root). If it's a full URL, keep as-is. null stays null.
@@ -315,7 +315,7 @@ function renderScrubber() {
   sc.innerHTML = "";
   STORY_CHAPTERS.forEach((ch, i) => {
     const dot = el("button", "scrubber-dot" + (i === state.chapterIndex ? " active" : ""));
-    dot.title = `Moment ${ch.order} — ${ch.title}`;
+    dot.title = `Moment ${i + 1} — ${ch.title}`;
     dot.setAttribute("aria-label", dot.title);
     dot.addEventListener("click", () => goToChapter(i));
     sc.appendChild(dot);
@@ -398,7 +398,7 @@ function renderPins() {
 
     const pin = el("div", "annotation-pin visible" + (isActive ? " active" : ""));
     pin.style.cssText = `left:${sx.toFixed(1)}px;top:${sy.toFixed(1)}px;opacity:${op.toFixed(2)}`;
-    pin.title = `Moment ${m.order} — ${m.title}`;
+    pin.title = `Moment ${idx + 1} — ${m.title}`;
     pin.innerHTML = `<div class="pin-icon">${locationPinSVG}</div>`;
     pin.addEventListener("click", e => {
       e.stopPropagation();
@@ -428,7 +428,7 @@ function renderTOC() {
   STORY_CHAPTERS.forEach((ch, i) => {
     const item = el("button", "toc-item" + (i === state.chapterIndex ? " active" : ""));
     item.innerHTML = `
-      <span class="toc-num">${String(ch.order).padStart(2, "0")}</span>
+      <span class="toc-num">${String(i + 1).padStart(2, "0")}</span>
       <span class="toc-info">
         <span class="toc-title">${esc(ch.title)}</span>
         <span class="toc-sub">

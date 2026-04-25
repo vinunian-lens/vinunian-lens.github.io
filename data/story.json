@@ -1,9 +1,8 @@
 {
-  "_comment_chapters": "Each chapter is a moment in the story. Order matters — the story follows this sequence, not the location order. Images can be remote URLs or local paths like 'assets/photo.jpg'. Set image to null if there is none. Set video to a local path for video chapters — video takes priority over image.",
+  "_comment_chapters": "Each chapter is a moment in the story. Order is determined by position in this list. Images can be remote URLs or local paths like 'assets/photo.jpg'. Set image to null if there is none. Set video to a local path for video chapters — video takes priority over image.",
 
   "chapters": [
     {
-      "order": 1,
       "location": "o1",
       "yaw": 0,
       "pitch": 0,
@@ -13,17 +12,15 @@
       "date": "2021-09-09"
     },
     {
-      "order": 2,
       "location": "j8",
       "yaw": 330,
       "pitch": 7,
       "title": "Year 1 - From Strangers to Friends on VinUni Campus",
-      "body": "When 300 cohort-2 students finally arrived on campus in the second semester, the dormitory became more than a residence, it became the first real meeting point on the VinUni journey map. During quarantine periods, shared routines and limited social exposure unexpectedly created space for deeper conversations and stronger bonds and I became part of a friend group called \u201clâu đài tình ái\u201d [a loving castel]. This showed how community at VinUni often begins not through formal structures, but through everyday moments of living together.",
+      "body": "When 300 cohort-2 students finally arrived on campus in the second semester, the dormitory became more than a residence, it became the first real meeting point on the VinUni journey map. During quarantine periods, shared routines and limited social exposure unexpectedly created space for deeper conversations and stronger bonds and I became part of a friend group called “lâu đài tình ái” [a loving castel]. This showed how community at VinUni often begins not through formal structures, but through everyday moments of living together.",
       "image": "assets/year1_an_uong.jpeg",
       "date": "2021-11-11"
     },
     {
-      "order": 3,
       "location": "j8",
       "yaw": 30,
       "pitch": 7,
@@ -34,17 +31,15 @@
       "date": "2022-02-01"
     },
     {
-      "order": 4,
       "location": "c6",
       "yaw": 33,
       "pitch": -27,
       "title": "Year 2 - When the Path Forward Becomes Unclear",
-      "body": "At VinUniversity, it is common to see students sharing milestones on social media: excellent transcripts, club president champion of change, dean\u2019s list, president\u2019s list. While these achievements help some students stay motivated, others like me begin to feel pressured because my future uncertainty is more visible. In the second year, I became more reflective and started questioning: how the knowledge from courses like Linear Algebra or Advanced Probability and Statistics connected to my future, and what exactly do I want to do as a career. These unsolved anxiety drive me to withdraw in academic performance with missing assignments and lower-grade in GPA.",
+      "body": "At VinUniversity, it is common to see students sharing milestones on social media: excellent transcripts, club president champion of change, dean’s list, president’s list. While these achievements help some students stay motivated, others like me begin to feel pressured because my future uncertainty is more visible. In the second year, I became more reflective and started questioning: how the knowledge from courses like Linear Algebra or Advanced Probability and Statistics connected to my future, and what exactly do I want to do as a career. These unsolved anxiety drive me to withdraw in academic performance with missing assignments and lower-grade in GPA.",
       "image": "assets/year2_feeling_lost.jpeg",
       "date": "2022-10-02"
     },
     {
-      "order": 5,
       "location": "o5",
       "yaw": 352,
       "pitch": 7,
@@ -54,7 +49,6 @@
       "date": "2023-02-21"
     },
     {
-      "order": 6,
       "location": "a3",
       "yaw": 154,
       "pitch": -5,
@@ -64,17 +58,15 @@
       "date": "2023-04-24"
     },
     {
-      "order": 7,
       "location": "o1",
       "yaw": 297,
       "pitch": 21,
       "title": "Gap Year - A Necessary Gap to Move Forward with Clarity",
-      "body": "Taking a gap year now felt more like an intentional turning point rather than a running away from the problem. Stepping away from the regular academic timeline, I was allowed to spend time at home, playing with kids and reading more of my favorite anime comics, which thereby helped me with staying connected to my true self. This fueled me to reach out for an opportunity that I have always been curious and dreamed of but too scared to do: joining a summer AI program and applying for an AI Engineer position and spending about five months working full-time, from 9 a.m. to 5 p.m. Interestingly, several students within the same living community at VinUni made similar decisions at different moments: my second-year roommate, also a VinUni student in CECS, took a gap year at the same time - without either of us knowing beforehand. In fact, all four of my roommates from that year eventually took gap years, just at different times. This shows that \u201cuncommon\u201d timelines are not that uncommon. These detours reflect how student journeys are shaped not by a single fixed route, but by the willingness to explore before continuing forward with clearer purpose.",
+      "body": "Taking a gap year now felt more like an intentional turning point rather than a running away from the problem. Stepping away from the regular academic timeline, I was allowed to spend time at home, playing with kids and reading more of my favorite anime comics, which thereby helped me with staying connected to my true self. This fueled me to reach out for an opportunity that I have always been curious and dreamed of but too scared to do: joining a summer AI program and applying for an AI Engineer position and spending about five months working full-time, from 9 a.m. to 5 p.m. Interestingly, several students within the same living community at VinUni made similar decisions at different moments: my second-year roommate, also a VinUni student in CECS, took a gap year at the same time - without either of us knowing beforehand. In fact, all four of my roommates from that year eventually took gap years, just at different times. This shows that “uncommon” timelines are not that uncommon. These detours reflect how student journeys are shaped not by a single fixed route, but by the willingness to explore before continuing forward with clearer purpose.",
       "image": "assets/year2_internship.jpeg",
       "date": "2023-12-30"
     },
     {
-      "order": 8,
       "location": "o3",
       "yaw": 210,
       "pitch": -2,
@@ -85,7 +77,6 @@
       "date": "2024-09-09"
     },
     {
-      "order": 9,
       "location": "a21",
       "yaw": 340,
       "pitch": 0,
@@ -95,7 +86,6 @@
       "date": "2024-12-22"
     },
     {
-      "order": 10,
       "location": "o3",
       "yaw": 54,
       "pitch": 43,
@@ -105,7 +95,6 @@
       "date": "2025-11-11"
     },
     {
-      "order": 11,
       "location": "o3",
       "yaw": 307,
       "pitch": 66,
@@ -115,7 +104,6 @@
       "date": "2025-12-12"
     },
     {
-      "order": 12,
       "location": "o9",
       "yaw": 200,
       "pitch": 0,
@@ -125,12 +113,11 @@
       "date": "2026-03-03"
     },
     {
-      "order": 13,
       "location": "i1",
       "yaw": 0,
       "pitch": 0,
       "title": "Year 4 - Holding Onto the Final Moments",
-      "body": "As my graduation approaching in June 2026, everyday spaces on VinUni campus began to feel different for me: not because they changed, but because their meaning became clearer in time. Walking through familiar paths created a quiet awareness that this stage of the journey was coming to a close. It feels almost unreal how much I have changed from a shy boy, clueless with what I\u2019m doing to a more confident boy, happy with the present and knowing where I am going in the future. Moments like these often bring reflections not only on personal experiences, but also on friends who had already moved forward into their own next chapters. Sometimes I wonder if my friends who graduated last year would feel the same way. The final year becomes a space for noticing what might once have felt ordinary, allowing students to carry these memories with them as they prepare to continue their journeys beyond campus.",
+      "body": "As my graduation approaching in June 2026, everyday spaces on VinUni campus began to feel different for me: not because they changed, but because their meaning became clearer in time. Walking through familiar paths created a quiet awareness that this stage of the journey was coming to a close. It feels almost unreal how much I have changed from a shy boy, clueless with what I’m doing to a more confident boy, happy with the present and knowing where I am going in the future. Moments like these often bring reflections not only on personal experiences, but also on friends who had already moved forward into their own next chapters. Sometimes I wonder if my friends who graduated last year would feel the same way. The final year becomes a space for noticing what might once have felt ordinary, allowing students to carry these memories with them as they prepare to continue their journeys beyond campus.",
       "image": "assets/year4_walking.jpg",
       "date": "2026-04-04"
     }
