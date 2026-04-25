@@ -319,17 +319,18 @@ body {
 .story-arrow svg { width: 18px; height: 18px; }
 
 .fin-hint {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-serif);
   font-size: 9px; font-style: italic; font-weight: 600;
-  color: rgba(168, 69, 32, 0.85);
+  color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.3px;
   white-space: nowrap;
   overflow: hidden;
   background: transparent;
-  border: 1.5px solid rgba(168, 69, 32, 0.45);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
   border-radius: 6px;
   height: 10px;
-  line-height: 7px;
   max-width: 0;
   padding: 0;
   opacity: 0;
