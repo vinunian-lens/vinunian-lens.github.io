@@ -206,11 +206,6 @@ function goToChapter(index) {
   renderLocationPill();
   renderTOC();
   renderPins();
-  renderFinHint();
-}
-function renderFinHint() {
-  const hint = $("fin-hint");
-  if (hint) hint.classList.toggle("visible", state.chapterIndex === STORY_CHAPTERS.length - 1);
 }
 function nextChapter() {
   if (state.browseMode) { goToChapter(0); return; }
@@ -325,6 +320,11 @@ function renderScrubber() {
     dot.addEventListener("click", () => goToChapter(i));
     sc.appendChild(dot);
   });
+  if (state.chapterIndex === STORY_CHAPTERS.length - 1) {
+    const ghost = el("span", "scrubber-dot scrubber-dot-ghost");
+    ghost.setAttribute("aria-hidden", "true");
+    sc.appendChild(ghost);
+  }
   $("ch-counter-num").textContent   = state.chapterIndex + 1;
   $("ch-counter-total").textContent = STORY_CHAPTERS.length;
 }

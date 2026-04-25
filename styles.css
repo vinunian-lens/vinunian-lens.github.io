@@ -318,30 +318,6 @@ body {
 .story-arrow:hover { background: rgba(255, 255, 255, 0.1); transform: scale(1.08); }
 .story-arrow svg { width: 18px; height: 18px; }
 
-.fin-hint {
-  display: inline-flex;
-  align-items: center;
-  font-family: var(--font-serif);
-  font-size: 9px; font-style: italic; font-weight: 600;
-  color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 0.3px;
-  white-space: nowrap;
-  overflow: hidden;
-  background: transparent;
-  border: 1.5px solid rgba(255, 255, 255, 0.25);
-  border-radius: 6px;
-  height: 10px;
-  max-width: 0;
-  padding: 0;
-  opacity: 0;
-  pointer-events: none;
-  transition: max-width 0.4s var(--ease), padding 0.4s var(--ease), opacity 0.4s var(--ease);
-}
-.fin-hint.visible {
-  max-width: 40px;
-  padding: 0 7px;
-  opacity: 1;
-}
 
 .scrubber { display: flex; align-items: center; gap: 10px; }
 .scrubber-dot {
@@ -354,6 +330,11 @@ body {
 .scrubber-dot.active {
   background: var(--accent);
   width: 28px; border-radius: 6px;
+}
+.scrubber-dot-ghost {
+  background: rgba(255, 255, 255, 0.12);
+  cursor: default;
+  pointer-events: none;
 }
 
 #chapter-counter {
