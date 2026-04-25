@@ -320,18 +320,23 @@ body {
 
 .fin-hint {
   font-family: var(--font-serif);
-  font-size: 12px; font-style: italic; font-weight: 500;
-  color: var(--gold);
-  letter-spacing: 0.8px;
+  font-size: 10.5px; font-style: italic; font-weight: 600;
+  color: var(--paper);
+  letter-spacing: 0.4px;
   white-space: nowrap;
   overflow: hidden;
+  background: var(--accent);
+  border-radius: 6px;
   max-width: 0;
+  padding: 3px 0;
+  line-height: 1;
   opacity: 0;
   pointer-events: none;
-  transition: max-width 0.45s var(--ease), opacity 0.45s var(--ease);
+  transition: max-width 0.4s var(--ease), padding 0.4s var(--ease), opacity 0.4s var(--ease);
 }
 .fin-hint.visible {
-  max-width: 48px;
+  max-width: 52px;
+  padding: 3px 9px;
   opacity: 1;
 }
 
